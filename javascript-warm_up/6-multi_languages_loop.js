@@ -1,4 +1,5 @@
-const callMeMoby = require("./101-call_me_moby").callMeMoby;
-callMeMoby(3, function () {
-  console.log("C is fun");
-});
+const lines = ["C is fun", "Python is cool", "JavaScript is amazing"];
+
+for (let i = 0; i < lines.length; i++) {
+  console.log(lines[i]);
+}
