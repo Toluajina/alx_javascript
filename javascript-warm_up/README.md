@@ -26,3 +26,7 @@ You are not allowed to use var
 You are not allowed to use any if/else statement
 You can use only one console.log
 You must use a loop (while, for, etc.)
+
+4. Object: Update this script to replace the value 12 with 89:
+
+You are not allowed to use var
