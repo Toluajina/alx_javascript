@@ -1,5 +1,5 @@
 function welcome(firstName, lastName) {
-  const fullName = firstName + " " + lastName;
+  var fullName = firstName + " " + lastName;
 
   function displayFullName() {
     alert("Welcome " + fullName + "!");
@@ -8,5 +8,4 @@ function welcome(firstName, lastName) {
   displayFullName();
 }
 
-// Example usage:
-welcome("John", "Doe");
+welcome("Holberton", "School");
