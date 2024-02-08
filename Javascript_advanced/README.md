@@ -138,7 +138,7 @@ Executing the code should display in the console
 Harry: 4
 Draco: -2
 
-9. Stack order and setTimeout: Write the following commands in the following order:
+8. Stack order and setTimeout: Write the following commands in the following order:
 
 Log to the console Start of the execution queue
 Log to the console Final code block to be executed using setTimeout (with delay of 0)
