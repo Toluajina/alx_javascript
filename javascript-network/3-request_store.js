@@ -1,19 +1,12 @@
-const request = require("request");
 const fs = require("fs");
 
-const url = process.argv[2];
-const filePath = process.argv[3];
+const filePath = process.argv[2];
+const content = "C is fun!";
 
-request(url, (error, response, body) => {
-  if (!error && response.statusCode === 200) {
-    fs.writeFile(filePath, body, { encoding: "utf-8" }, (err) => {
-      if (err) {
-        console.error("Error writing to file:", err);
-      } else {
-        console.log("File written successfully.");
-      }
-    });
+fs.writeFile(filePath, content, { encoding: "utf-8" }, (err) => {
+  if (err) {
+    console.error("Error writing to file:", err);
   } else {
-    console.error("Error:", error);
+    console.log(content);
   }
 });
