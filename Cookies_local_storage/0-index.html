@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Example</title>
+  </head>
+  <body>
+    <input type="text" id="firstname" placeholder="First Name" /><br />
+    <input type="text" id="email" placeholder="Email" /><br />
+    <button onclick="setCookies()">Log me in</button>
+    <button onclick="showCookies()">Show the cookies</button>
+
+    <script>
+      function setCookies() {
+        var firstnameValue = document.getElementById("firstname").value;
+        var emailValue = document.getElementById("email").value;
+
+        document.cookie = "firstname=" + firstnameValue;
+        document.cookie = "email=" + emailValue;
+      }
+
+      function showCookies() {
+        var cookiesParagraph = document.createElement("p");
+        var cookiesText = "Cookies: ";
+
+        var cookies = document.cookie.split("; ");
+        cookies.forEach(function (cookie) {
+          cookiesText += cookie + ", ";
+        });
+
+        cookiesParagraph.innerHTML = cookiesText.slice(0, -2);
+        document.body.appendChild(cookiesParagraph);
+      }
+    </script>
+  </body>
+</html>
