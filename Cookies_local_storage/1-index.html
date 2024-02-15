@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Example</title>
+    <style>
+      .login-form {
+        display: flex;
+      }
+
+      .login-form input {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login to the website</h1>
+    <div class="login-form">
+      <input type="text" id="firstname" placeholder="First Name" />
+      <input type="text" id="email" placeholder="Email" />
+      <button onclick="setCookies()">Log me in</button>
+    </div>
+
+    <h2>Cookies</h2>
+    <button onclick="showCookies()">Show the cookies</button>
+
+    <script>
+      function setCookies() {
+        const firstname = document.getElementById("firstname").value;
+        const email = document.getElementById("email").value;
+
+        // Set cookies with expiration date in 10 days
+        const now = new Date();
+        const expirationDate = new Date(
+          now.getTime() + 10 * 24 * 60 * 60 * 1000
+        ); // 10 days
+        document.cookie = `firstname=${firstname}; expires=${expirationDate.toUTCString()}`;
+        document.cookie = `email=${email}; expires=${expirationDate.toUTCString()}`;
+      }
+
+      function showCookies() {
+        const cookies = document.cookie
+          .split(";")
+          .map((cookie) => cookie.trim());
+        const cookiesElement = document.createElement("p");
+        cookiesElement.innerHTML = "Cookies: " + cookies.join(", ");
+        document.body.appendChild(cookiesElement);
+      }
+    </script>
+  </body>
+</html>
